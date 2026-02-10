@@ -1,4 +1,4 @@
-* TODO Ingredients box
+* DONE Ingredients box
 JSON data => png
 * TODO Nutrition Facts
 * TODO Handle Variants

@@ -1,0 +1,15 @@
+{
+  "recipe_name": "Low FODMAP Mush",
+  "ingredients": [
+    {"name": "Rolled oats", "weight": 500},
+    {"name": "carrot", "weight": 200},
+    {"name": "pumpkin seeds (ground)", "weight": 150},
+    {"name": "potato", "weight": 180},
+    {"name": "garbanzo beans (precooked, dried)", "weight": 120},
+    {"name": "broccoli", "weight": 100},
+    {"name": "organic kale", "weight": 80},
+    {"name": "golden flax seeds (ground)", "weight": 60},
+    {"name": "turmeric", "weight": 5},
+    {"name": "black pepper", "weight": 2}
+  ]
+}
