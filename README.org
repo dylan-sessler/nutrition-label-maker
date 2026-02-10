@@ -1,0 +1,13 @@
+* Set-up
+** System Dependencies
+- `sudo apt-get install python3-pip python3-cffi python3-brotli libpango-1.0-0 libpangoft2-1.0-0`
+** New machine set-up
+- Create a fresh venv `python3 -m venv .venv`
+- Activate it
+  - Linux/Mac: `source .venv/bin/activate`
+  - Windows: `.venv\Scripts\activate`
+- pip install -r requirements.txt
+** Committing the installed packages
+- `pip freeze > requirements.txt`
+* Running
+- `python3 generate.py`
