@@ -2,12 +2,23 @@
 <html>
 <head>
     <style>
-        @page { size: 4in 6in; margin: 0; } /* Made taller for the full label */
+	/* Define the Custom Font */
+	@font-face {
+	    font-family: 'Inter';
+	    src: url('{{ font_path }}/fonts/Inter-VariableFont_opsz,wght.ttf');
+	}
 
         body {
-            font-family: Helvetica, Arial, sans-serif;
+	    font-family: Inter; /* Apply it everywhere */
             margin: 20px;
         }
+
+	/* Now you can use the real heavy weights! */
+	.serving-size-row strong {
+	    font-weight: 900; /* This will now actually look like "Black" weight */
+	}
+        @page { size: 4in 6in; margin: 0; } /* Made taller for the full label */
+
 
         /* --- THE MAIN CONTAINER --- */
         .nutrition-label {
@@ -49,7 +60,7 @@
 	}
 
 	.calories-label {
-	    font-size: 22px;
+	    font-size: 12px;
 	    font-weight: 900;
 	}
 
@@ -99,7 +110,7 @@
 
         <div class="serving-size-row">
             {{ n.servings_per_container }} servings per container<br>
-            <strong>Serving size <span style="float:right">{{ n.serving_size }}</span></strong>
+	    <strong>Serving size <span style="float:right">{{ n.serving_size }}</span></strong>
         </div>
 
         <div class="calories-row">

@@ -1,9 +1,13 @@
 import json
 from jinja2 import Environment, FileSystemLoader
 from weasyprint import HTML
+import os
+
+# Get the absolute path to the current folder
+current_dir = "file://" + os.getcwd()
 
 # 1. LOAD DATA
-with open('data.json', 'r') as f:
+with open('src/data.json', 'r') as f:
     data = json.load(f)
 
 # 2. PROCESS INGREDIENTS (Same as before)
@@ -14,12 +18,13 @@ final_string = ", ".join(ingredient_names)
 
 # 3. RENDER HTML
 env = Environment(loader=FileSystemLoader('.'))
-template = env.get_template('template.html')
+template = env.get_template('src/template.html')
 
 # *** UPDATE: We now pass 'n=data['nutrition']' to the template ***
 html_output = template.render(
     ingredients_text=final_string,
-    n=data['nutrition']
+    n=data['nutrition'],
+    font_path=current_dir
 )
 
 # 4. SAVE OUTPUT
