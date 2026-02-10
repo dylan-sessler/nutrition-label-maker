@@ -38,17 +38,26 @@
             font-size: 14px;
         }
 
-        .calories-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            border-bottom: 4px solid black; /* The bar under Calories */
-            padding-bottom: 5px;
-            margin-bottom: 5px;
-        }
+	.calories-row {
+	    display: flex;
+	    justify-content: space-between;
+	    align-items: flex-end; /* This forces "Calories" and "500" to sit on the same bottom line */
+	    border-bottom: 5px solid black;
+	    padding-bottom: 2px;
+	    margin-bottom: 5px;
+	    line-height: 1; /* Tights up the vertical spacing */
+	}
 
-        .calories-label { font-size: 20px; font-weight: bold; }
-        .calories-value { font-size: 40px; font-weight: 900; line-height: 1; }
+	.calories-label {
+	    font-size: 22px;
+	    font-weight: 900;
+	}
+
+	.calories-value {
+	    font-size: 46px; /* Make the number huge */
+	    font-weight: 900;
+	    line-height: 0.8; /* Pulls the number down slightly to match the text baseline */
+	}
 
         /* --- NUTRIENT TABLE --- */
         table {
