@@ -1,0 +1,25 @@
+# 1. The Virtual Environment (Crucial)
+.venv/
+venv/
+env/
+
+# 2. Bytecode (Compiled python files)
+__pycache__/
+*.py[cod]
+
+# 3. Environment Variables (Security Risk!)
+.env
+.env.local
+
+# 4. Distribution / Build artifacts
+dist/
+build/
+*.egg-info/
+
+# 5. IDE Settings (Optional but recommended)
+.vscode/
+.idea/
+
+# 6. OS Junk
+.DS_Store
+Thumbs.db
