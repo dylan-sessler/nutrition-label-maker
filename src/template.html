@@ -95,7 +95,7 @@
              border-bottom: 12px solid black;
              padding-bottom: 5px;
              margin-bottom: 5px;
-             font-size: 14px;
+             font-size: 18px;
          }
 
          .calories-row {
@@ -109,7 +109,7 @@
          table { width: 100%; border-collapse: collapse; font-size: 13px; }
          td { padding: 3px 0; border-bottom: 1px solid #ccc; }
 
-         .dv-percent { text-align: right; font-weight: bold; }
+         .dv-percent { text-align: right; font-weight: 900; }
          .bold { font-weight: 900; }
          .indent { padding-left: 15px; }
          .double-indent { padding-left: 30px; }
@@ -161,7 +161,7 @@
 		<span class="calories-value">{{ n.calories }}</span>
             </div>
 
-            <table>
+            <table style="font-size: 16px">
 		<tr><td class="dv-percent" colspan="2">% Daily Value*</td></tr>
 		<tr><td><span class="bold">Total Fat</span> {{ n.total_fat_g }}g</td><td class="dv-percent">{{ n.total_fat_dv }}%</td></tr>
 		<tr><td class="indent">Saturated Fat {{ n.sat_fat_g }}g</td><td class="dv-percent">{{ n.sat_fat_dv }}%</td></tr>
