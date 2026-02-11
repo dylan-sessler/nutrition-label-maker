@@ -1,5 +1,8 @@
 {
   "recipe_name": "Low FODMAP Mush",
+  "config": {
+    "has_salt_variants": true
+  },
   "nutrition": {
     "servings_per_container": 48,
     "serving_size": "1.25 cups (125g)",

@@ -1,3 +1,6 @@
+# generated labels
+output_labels
+
 # 1. The Virtual Environment (Crucial)
 .venv/
 venv/

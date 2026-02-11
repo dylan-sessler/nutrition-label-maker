@@ -1,198 +1,198 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <style>
-	/* Define the Custom Font */
-	@font-face {
-	    font-family: 'Inter';
-	    src: url('{{ font_path }}/fonts/Inter-VariableFont_opsz,wght.ttf');
-	}
+    <head>
+	<style>
+	 /* Define the Custom Font */
+	 @font-face {
+	     font-family: 'Inter';
+	     src: url('{{ font_path }}/fonts/Inter-VariableFont_opsz,wght.ttf');
+	 }
 
-        body {
-	    font-family: Inter; /* Apply it everywhere */
-            margin: 20px;
-        }
+         body {
+	     font-family: Inter; /* Apply it everywhere */
+             margin: 20px;
+         }
 
-	/* Now you can use the real heavy weights! */
-	.serving-size-row strong {
-	    font-weight: 900; /* This will now actually look like "Black" weight */
-	}
-        @page { size: 4in 6in; margin: 0; } /* Made taller for the full label */
+	 /* Now you can use the real heavy weights! */
+	 .serving-size-row strong {
+	     font-weight: 900; /* This will now actually look like "Black" weight */
+	 }
+         @page { size: 4in 6in; margin: 0; } /* Made taller for the full label */
 
 
-        /* --- THE MAIN CONTAINER --- */
-        .nutrition-label {
-            border: 1px solid black;
-            width: 300px;
-            padding: 5px;
-            box-sizing: border-box;
-        }
+         /* --- THE MAIN CONTAINER --- */
+         .nutrition-label {
+             border: 1px solid black;
+             width: 300px;
+             padding: 5px;
+             box-sizing: border-box;
+         }
 
-        /* --- TYPOGRAPHY & LAYOUT --- */
-        h1 {
-            margin: 0;
-            font-size: 34px;
-            font-weight: 900;
-            line-height: 1;
-        }
+         /* --- TYPOGRAPHY & LAYOUT --- */
+         h1 {
+             margin: 0;
+             font-size: 34px;
+             font-weight: 900;
+             line-height: 1;
+         }
 
-        .header-row {
-            border-bottom: 1px solid black; /* The thick bar under Nutrition Facts */
-            padding-bottom: 5px;
-            margin-bottom: 5px;
-        }
+         .header-row {
+             border-bottom: 1px solid black; /* The thick bar under Nutrition Facts */
+             padding-bottom: 5px;
+             margin-bottom: 5px;
+         }
 
-        .serving-size-row {
-            border-bottom: 10px solid black; /* The medium bar under Serving Size */
-            padding-bottom: 5px;
-            margin-bottom: 5px;
-            font-size: 14px;
-        }
+         .serving-size-row {
+             border-bottom: 10px solid black; /* The medium bar under Serving Size */
+             padding-bottom: 5px;
+             margin-bottom: 5px;
+             font-size: 14px;
+         }
 
-	.calories-row {
-	    display: flex;
-	    justify-content: space-between;
-	    align-items: flex-end; /* This forces "Calories" and "500" to sit on the same bottom line */
-	    border-bottom: 5px solid black;
-	    padding-bottom: 5px;
-	    margin-bottom: 5px;
-	    line-height: 1; /* Tights up the vertical spacing */
-	}
+	 .calories-row {
+	     display: flex;
+	     justify-content: space-between;
+	     align-items: flex-end; /* This forces "Calories" and "500" to sit on the same bottom line */
+	     border-bottom: 5px solid black;
+	     padding-bottom: 5px;
+	     margin-bottom: 5px;
+	     line-height: 1; /* Tights up the vertical spacing */
+	 }
 
-	.calories-label {
-	    font-size: 12px;
-	    font-weight: 900;
-	}
+	 .calories-label {
+	     font-size: 12px;
+	     font-weight: 900;
+	 }
 
-	.calories-value {
-	    font-size: 36px; /* Make the number huge */
-	    font-weight: 900;
-	    line-height: 0.8; /* Pulls the number down slightly to match the text baseline */
-	}
+	 .calories-value {
+	     font-size: 36px; /* Make the number huge */
+	     font-weight: 900;
+	     line-height: 0.8; /* Pulls the number down slightly to match the text baseline */
+	 }
 
-        /* --- NUTRIENT TABLE --- */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 13px;
-        }
+         /* --- NUTRIENT TABLE --- */
+         table {
+             width: 100%;
+             border-collapse: collapse;
+             font-size: 13px;
+         }
 
-        td {
-            padding: 3px 0;
-            border-bottom: 1px solid #ccc; /* Thin dividers */
-        }
+         td {
+             padding: 3px 0;
+             border-bottom: 1px solid #ccc; /* Thin dividers */
+         }
 
-        /* Classes to control boldness and alignment */
-        .dv-percent { text-align: right; font-weight: bold; }
-        .bold { font-weight: 900; }
-        .indent { padding-left: 15px; } /* Indents sub-items like Trans Fat */
-        .double-indent { padding-left: 30px; }
+         /* Classes to control boldness and alignment */
+         .dv-percent { text-align: right; font-weight: bold; }
+         .bold { font-weight: 900; }
+         .indent { padding-left: 15px; } /* Indents sub-items like Trans Fat */
+         .double-indent { padding-left: 30px; }
 
-        .thick-end {
-            border-bottom: 10px solid black;
-        }
+         .thick-end {
+             border-bottom: 10px solid black;
+         }
 
-        /* --- INGREDIENTS FOOTER --- */
-        .ingredients-box {
-            margin-top: 10px;
-            font-size: 10px;
-            line-height: 1.3;
-        }
-    </style>
-</head>
-<body>
+         /* --- INGREDIENTS FOOTER --- */
+         .ingredients-box {
+             margin-top: 10px;
+             font-size: 10px;
+             line-height: 1.3;
+         }
+	</style>
+    </head>
+    <body>
 
-    <div class="nutrition-label">
+	<div class="nutrition-label">
 
-        <div class="header-row">
-            <h1>Nutrition Facts</h1>
-        </div>
+            <div class="header-row">
+		<h1>Nutrition Facts</h1>
+            </div>
 
-        <div class="serving-size-row">
-            {{ n.servings_per_container }} servings per container<br>
-	    <strong>Serving size <span style="float:right">{{ n.serving_size }}</span></strong>
-        </div>
+            <div class="serving-size-row">
+		{{ n.servings_per_container }} servings per container<br>
+		<strong>Serving size <span style="float:right">{{ n.serving_size }}</span></strong>
+            </div>
 
-        <div class="calories-row">
-            <span class="calories-label">Amount per serving<br><span style="font-size: 30px">Calories</span></span>
-            <span class="calories-value">{{ n.calories }}</span>
-        </div>
+            <div class="calories-row">
+		<span class="calories-label">Amount per serving<br><span style="font-size: 30px">Calories</span></span>
+		<span class="calories-value">{{ n.calories }}</span>
+            </div>
 
-        <table>
-            <tr>
-                <td class="dv-percent" colspan="2">% Daily Value*</td>
-            </tr>
+            <table>
+		<tr>
+                    <td class="dv-percent" colspan="2">% Daily Value*</td>
+		</tr>
 
-            <tr>
-                <td><span class="bold">Total Fat</span> {{ n.total_fat_g }}g</td>
-                <td class="dv-percent">{{ n.total_fat_dv }}%</td>
-            </tr>
-            <tr>
-                <td class="indent">Saturated Fat {{ n.sat_fat_g }}g</td>
-                <td class="dv-percent">{{ n.sat_fat_dv }}%</td>
-            </tr>
-            <tr>
-                <td class="indent"><i>Trans</i> Fat {{ n.trans_fat_g }}g</td>
-                <td class="dv-percent"></td>
-            </tr>
+		<tr>
+                    <td><span class="bold">Total Fat</span> {{ n.total_fat_g }}g</td>
+                    <td class="dv-percent">{{ n.total_fat_dv }}%</td>
+		</tr>
+		<tr>
+                    <td class="indent">Saturated Fat {{ n.sat_fat_g }}g</td>
+                    <td class="dv-percent">{{ n.sat_fat_dv }}%</td>
+		</tr>
+		<tr>
+                    <td class="indent"><i>Trans</i> Fat {{ n.trans_fat_g }}g</td>
+                    <td class="dv-percent"></td>
+		</tr>
 
-            <tr>
-                <td><span class="bold">Cholesterol</span> {{ n.cholesterol_mg }}mg</td>
-                <td class="dv-percent">{{ n.cholesterol_dv }}%</td>
-            </tr>
-            <tr>
-                <td><span class="bold">Sodium</span> {{ n.sodium_mg }}mg</td>
-                <td class="dv-percent">{{ n.sodium_dv }}%</td>
-            </tr>
+		<tr>
+                    <td><span class="bold">Cholesterol</span> {{ n.cholesterol_mg }}mg</td>
+                    <td class="dv-percent">{{ n.cholesterol_dv }}%</td>
+		</tr>
+		<tr>
+                    <td><span class="bold">Sodium</span> {{ n.sodium_mg }}mg</td>
+                    <td class="dv-percent">{{ n.sodium_dv }}%</td>
+		</tr>
 
-            <tr>
-                <td><span class="bold">Total Carbohydrate</span> {{ n.total_carb_g }}g</td>
-                <td class="dv-percent">{{ n.total_carb_dv }}%</td>
-            </tr>
-            <tr>
-                <td class="indent">Dietary Fiber {{ n.fiber_g }}g</td>
-                <td class="dv-percent">{{ n.fiber_dv }}%</td>
-            </tr>
-            <tr>
-                <td class="indent">Total Sugars {{ n.sugar_g }}g</td>
-                <td class="dv-percent"></td>
-            </tr>
-            <tr>
-                <td class="double-indent">Includes {{ n.added_sugar_g }}g Added Sugars</td>
-                <td class="dv-percent">{{ n.added_sugar_dv }}%</td>
-            </tr>
+		<tr>
+                    <td><span class="bold">Total Carbohydrate</span> {{ n.total_carb_g }}g</td>
+                    <td class="dv-percent">{{ n.total_carb_dv }}%</td>
+		</tr>
+		<tr>
+                    <td class="indent">Dietary Fiber {{ n.fiber_g }}g</td>
+                    <td class="dv-percent">{{ n.fiber_dv }}%</td>
+		</tr>
+		<tr>
+                    <td class="indent">Total Sugars {{ n.sugar_g }}g</td>
+                    <td class="dv-percent"></td>
+		</tr>
+		<tr>
+                    <td class="double-indent">Includes {{ n.added_sugar_g }}g Added Sugars</td>
+                    <td class="dv-percent">{{ n.added_sugar_dv }}%</td>
+		</tr>
 
-            <tr class="thick-end">
-                <td><span class="bold">Protein</span> {{ n.protein_g }}g</td>
-                <td class="dv-percent"></td>
-            </tr>
+		<tr class="thick-end">
+                    <td><span class="bold">Protein</span> {{ n.protein_g }}g</td>
+                    <td class="dv-percent"></td>
+		</tr>
 
-            <tr>
-                <td>Vitamin D {{ n.vit_d_mcg }}mcg</td>
-                <td class="dv-percent">{{ n.vit_d_dv }}%</td>
-            </tr>
-            <tr>
-                <td>Calcium {{ n.calcium_mg }}mg</td>
-                <td class="dv-percent">{{ n.calcium_dv }}%</td>
-            </tr>
-            <tr>
-                <td>Iron {{ n.iron_mg }}mg</td>
-                <td class="dv-percent">{{ n.iron_dv }}%</td>
-            </tr>
-            <tr>
-                <td style="border-bottom: none;">Potassium {{ n.potassium_mg }}mg</td>
-                <td style="border-bottom: none;" class="dv-percent">{{ n.potassium_dv }}%</td>
-            </tr>
-        </table>
+		<tr>
+                    <td>Vitamin D {{ n.vit_d_mcg }}mcg</td>
+                    <td class="dv-percent">{{ n.vit_d_dv }}%</td>
+		</tr>
+		<tr>
+                    <td>Calcium {{ n.calcium_mg }}mg</td>
+                    <td class="dv-percent">{{ n.calcium_dv }}%</td>
+		</tr>
+		<tr>
+                    <td>Iron {{ n.iron_mg }}mg</td>
+                    <td class="dv-percent">{{ n.iron_dv }}%</td>
+		</tr>
+		<tr>
+                    <td style="border-bottom: none;">Potassium {{ n.potassium_mg }}mg</td>
+                    <td style="border-bottom: none;" class="dv-percent">{{ n.potassium_dv }}%</td>
+		</tr>
+            </table>
 
-        <div style="border-top: 4px solid black; margin-top: 2px; padding-top: 4px; font-size: 8pt;">
-            * The % Daily Value (DV) tells you how much a nutrient in a serving of food contributes to a daily diet. 2,000 calories a day is used for general nutrition advice.
-        </div>
-    </div>
+            <div style="border-top: 4px solid black; margin-top: 2px; padding-top: 4px; font-size: 8pt;">
+		* The % Daily Value (DV) tells you how much a nutrient in a serving of food contributes to a daily diet. 2,000 calories a day is used for general nutrition advice.
+            </div>
+	</div>
 
-    <div class="ingredients-box" style="width: 300px;">
-        <strong>Ingredients:</strong> {{ ingredients_text }}
-    </div>
+	<div class="ingredients-box" style="width: 300px;">
+            <strong>Ingredients:</strong> {{ ingredients_text }}
+	</div>
 
-</body>
+    </body>
 </html>
