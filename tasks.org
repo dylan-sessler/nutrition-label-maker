@@ -5,5 +5,6 @@ JSON data => png
 * DONE Handle multiple recipes
 * DONE Add salt to ingredient list when there's added salt
 * DONE Header
-* TODO Footer
+* DONE Footer
 * TODO sizing and final polish
+- [ ] swap fonts to computer font
