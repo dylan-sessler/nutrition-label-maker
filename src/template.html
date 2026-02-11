@@ -102,7 +102,23 @@
         .double-indent { padding-left: 30px; }
         .thick-end { border-bottom: 10px solid black; }
 
-        .ingredients-box { margin-top: 10px; font-size: 10px; line-height: 1.3; width: 300px; }
+	.ingredients-box {
+		margin-top: 10px;
+		font-size: 10px;
+		line-height: 1.3;
+		width: 300px;
+		border: 1px solid black;
+		padding: 4px;
+	    }
+
+	.footer {
+	    width: 300px;
+	    text-align: center;
+	    margin-top: 10px;      /* Space between ingredients and footer */
+	    font-size: 10pt;       /* Matches the look of the original */
+	    line-height: 1.2;
+	    font-family: 'Inter', Helvetica, Arial, sans-serif;
+	}
     </style>
 </head>
 <body>
@@ -157,6 +173,11 @@
 
     <div class="ingredients-box">
         <strong>Ingredients:</strong> {{ ingredients_text }}
+    </div>
+
+    <div class="footer">
+        Veggie Mush Inc.<br>
+        446 Highland Ave, Malden, MA 02148
     </div>
 
 </body>
