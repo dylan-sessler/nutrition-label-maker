@@ -36,16 +36,16 @@
       "potassium_dv": 22
     },
     "ingredients": [
-      { "name": "Rolled oats", "weight": 600 },
-      { "name": "garbanzo beans (precooked, dried)", "weight": 500 },
-      { "name": "sunflower seeds (ground)", "weight": 200 },
-      { "name": "organic raisins", "weight": 180 },
-      { "name": "organic bananas", "weight": 150 },
-      { "name": "organic blueberries", "weight": 120 },
-      { "name": "golden flax seeds (ground)", "weight": 100 },
-      { "name": "ceylon cinnamon", "weight": 60 },
-      { "name": "cardamom (ground)", "weight": 5 },
-      { "name": "cloves (ground)", "weight": 2 }
+      { "name": "Rolled oats", "weight": 1770 },
+      { "name": "garbanzo beans (precooked, dried)", "weight": 1320 },
+      { "name": "sunflower seeds (ground)", "weight": 1271 },
+      { "name": "organic raisins", "weight": 1140 },
+      { "name": "organic bananas", "weight": 640 },
+      { "name": "organic blueberries", "weight": 600 },
+      { "name": "golden flax seeds (ground)", "weight": 116 },
+      { "name": "ceylon cinnamon", "weight": 62 },
+      { "name": "cardamom (ground)", "weight": 18 },
+      { "name": "cloves (ground)", "weight": 18 }
     ]
   },
   {
@@ -85,16 +85,16 @@
       "potassium_dv": 29
     },
     "ingredients": [
-      { "name": "Rolled oats", "weight": 500 },
-      { "name": "garbanzo beans (precooked, dried)", "weight": 400 },
-      { "name": "sunflower seeds (ground)", "weight": 300 },
-      { "name": "butternut squash", "weight": 200 },
-      { "name": "organic red bell pepper", "weight": 100 },
-      { "name": "broccoli", "weight": 90 },
-      { "name": "organic kale", "weight": 80 },
-      { "name": "golden flax seeds (ground)", "weight": 70 },
-      { "name": "turmeric", "weight": 60 },
-      { "name": "black pepper", "weight": 50 }
+      { "name": "Rolled oats", "weight": 1770 },
+      { "name": "garbanzo beans (precooked, dried)", "weight": 1320 },
+      { "name": "sunflower seeds (ground)", "weight": 1271 },
+      { "name": "butternut squash", "weight": 624 },
+      { "name": "organic red bell pepper", "weight": 259 },
+      { "name": "broccoli", "weight": 252 },
+      { "name": "organic kale", "weight": 171 },
+      { "name": "golden flax seeds (ground)", "weight": 116 },
+      { "name": "turmeric", "weight": 7.5 },
+      { "name": "black pepper", "weight": 0.625 }
     ]
   },
   {
@@ -134,65 +134,65 @@
       "potassium_dv": 29
     },
     "ingredients": [
-      { "name": "Rolled oats", "weight": 500 },
-      { "name": "garbanzo beans (precooked, dried)", "weight": 400 },
-      { "name": "sunflower seeds (ground)", "weight": 300  },
-      { "name": "butternut squash", "weight": 200 },
-      { "name": "white mushroom", "weight": 100 },
-      { "name": "tomato", "weight": 90 },
-      { "name": "organic kale", "weight": 80 },
-      { "name": "golden flax seeds (ground)", "weight": 70 },
-      { "name": "turmeric", "weight": 60 },
-      { "name": "black pepper", "weight": 40 }
+      { "name": "Rolled oats", "weight": 1770 },
+      { "name": "garbanzo beans (precooked, dried)", "weight": 1320 },
+      { "name": "sunflower seeds (ground)", "weight": 1271  },
+      { "name": "butternut squash", "weight": 490 },
+      { "name": "white mushroom", "weight": 288 },
+      { "name": "tomato", "weight": 276 },
+      { "name": "organic kale", "weight": 171 },
+      { "name": "golden flax seeds (ground)", "weight": 116 },
+      { "name": "turmeric", "weight": 7.5 },
+      { "name": "black pepper", "weight": 0.625 }
     ]
   },
   {
-    "recipe_name": "Low FODMAP Mush",
-    "short_name": "LF",
-    "config": {
-      "has_salt_variants": true
-    },
-    "nutrition": {
-      "servings_per_container": 48,
-      "serving_size": "1.25 cups (125g)",
-      "calories": 500,
-      "total_fat_g": 18,
-      "total_fat_dv": 23,
-      "sat_fat_g": 1,
-      "sat_fat_dv": 5,
-      "trans_fat_g": 0,
-      "cholesterol_mg": 0,
-      "cholesterol_dv": 0,
-      "sodium_mg": 96,
-      "sodium_dv": 4,
-      "total_carb_g": 147,
-      "total_carb_dv": 53,
-      "fiber_g": 12,
-      "fiber_dv": 43,
-      "sugar_g": 13,
-      "added_sugar_g": 0,
-      "added_sugar_dv": 0,
-      "protein_g": 22,
-      "vit_d_mcg": 0,
-      "vit_d_dv": 0,
-      "calcium_mg": 230,
-      "calcium_dv": 18,
-      "iron_mg": 10,
-      "iron_dv": 56,
-      "potassium_mg": 1440,
-      "potassium_dv": 31
-    },
-    "ingredients": [
-      {"name": "Rolled oats", "weight": 500},
-      {"name": "carrot", "weight": 200},
-      {"name": "pumpkin seeds (ground)", "weight": 150},
-      {"name": "potato", "weight": 180},
-      {"name": "garbanzo beans (precooked, dried)", "weight": 120},
-      {"name": "broccoli", "weight": 100},
-      {"name": "organic kale", "weight": 80},
-      {"name": "golden flax seeds (ground)", "weight": 60},
-      {"name": "turmeric", "weight": 5},
-      {"name": "black pepper", "weight": 2}
-    ]
-  }
+  "recipe_name": "Low FODMAP Mush",
+  "short_name": "LF",
+  "config": {
+    "has_salt_variants": true
+  },
+  "nutrition": {
+    "servings_per_container": 48,
+    "serving_size": "1.25 cups (125g)",
+    "calories": 500,
+    "total_fat_g": 18,
+    "total_fat_dv": 23,
+    "sat_fat_g": 1,
+    "sat_fat_dv": 5,
+    "trans_fat_g": 0,
+    "cholesterol_mg": 0,
+    "cholesterol_dv": 0,
+    "sodium_mg": 96,
+    "sodium_dv": 4,
+    "total_carb_g": 147,
+    "total_carb_dv": 53,
+    "fiber_g": 12,
+    "fiber_dv": 43,
+    "sugar_g": 13,
+    "added_sugar_g": 0,
+    "added_sugar_dv": 0,
+    "protein_g": 22,
+    "vit_d_mcg": 0,
+    "vit_d_dv": 0,
+    "calcium_mg": 230,
+    "calcium_dv": 18,
+    "iron_mg": 10,
+    "iron_dv": 56,
+    "potassium_mg": 1440,
+    "potassium_dv": 31
+  },
+  "ingredients": [
+    {"name": "Rolled oats", "weight": 1770},
+    {"name": "carrot", "weight": 795},
+    {"name": "pumpkin seeds (ground)", "weight": 1272},
+    {"name": "potato", "weight": 792},
+    {"name": "garbanzo beans (precooked, dried)", "weight": 660},
+    {"name": "broccoli", "weight": 252},
+    {"name": "organic kale", "weight": 214},
+    {"name": "golden flax seeds (ground)", "weight": 116},
+    {"name": "turmeric", "weight": 7.5},
+    {"name": "black pepper", "weight": 0.625}
+  ]
+}
 ]
