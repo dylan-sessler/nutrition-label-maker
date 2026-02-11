@@ -20,14 +20,17 @@ SODIUM_DV_BASE = 2300
 # "salt_g_per_48_servings": The actual weight of salt added to a full batch
 SALT_VARIANTS = {
     "noSalt": {
+        "display_name": "(no salt)",
         "sodium_mg": 0,
         "salt_g_per_48_servings": 0
     },
     "standardSalt": {
+        "display_name": "",
         "sodium_mg": 614,
         "salt_g_per_48_servings": 76
     },
     "highSalt": {
+        "display_name": "(high salt)",
         "sodium_mg": 1228,
         "salt_g_per_48_servings": 152
     }
@@ -101,6 +104,12 @@ for recipe in recipes_list:
                 final_ingredients_text = ", ".join([item['name'] for item in sorted_ingredients])
 
                 # --- C. RENDER ---
+                # Only add the suffix if the recipe actually has multiple salt options
+                if recipe.get('config', {}).get('has_salt_variants', False):
+                    display_title = f"{r_name} {salt_data['display_name']}"
+                else:
+                    display_title = r_name
+
                 safe_name = r_name.replace(" ", "_").replace("(", "").replace(")", "")
                 filename = f"{safe_name}_{servings_display}sv_{salt_type}.png"
                 full_path = os.path.join(output_dir, filename)
@@ -109,7 +118,7 @@ for recipe in recipes_list:
                     ingredients_text=final_ingredients_text,
                     n=variant_nutrition,
                     font_path=project_path,
-                    full_name=r_name,
+                    full_name=display_title,
                     short_name=recipe.get('short_name')
                 )
 
