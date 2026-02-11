@@ -1,6 +1,7 @@
 [
   {
     "recipe_name": "Breakfast Mush",
+    "short_name": "Br",
     "config": {
       "has_salt_variants": false
     },
@@ -49,6 +50,7 @@
   },
   {
     "recipe_name": "Cruciferous Mush",
+    "short_name": "Cr",
     "config": {
       "has_salt_variants": true
     },
@@ -97,6 +99,7 @@
   },
   {
     "recipe_name": "Umami Mush",
+    "short_name": "Um",
     "config": {
       "has_salt_variants": true
     },
@@ -144,51 +147,52 @@
     ]
   },
   {
-  "recipe_name": "Low FODMAP Mush",
-  "config": {
-    "has_salt_variants": true
-  },
-  "nutrition": {
-    "servings_per_container": 48,
-    "serving_size": "1.25 cups (125g)",
-    "calories": 500,
-    "total_fat_g": 18,
-    "total_fat_dv": 23,
-    "sat_fat_g": 1,
-    "sat_fat_dv": 5,
-    "trans_fat_g": 0,
-    "cholesterol_mg": 0,
-    "cholesterol_dv": 0,
-    "sodium_mg": 96,
-    "sodium_dv": 4,
-    "total_carb_g": 147,
-    "total_carb_dv": 53,
-    "fiber_g": 12,
-    "fiber_dv": 43,
-    "sugar_g": 13,
-    "added_sugar_g": 0,
-    "added_sugar_dv": 0,
-    "protein_g": 22,
-    "vit_d_mcg": 0,
-    "vit_d_dv": 0,
-    "calcium_mg": 230,
-    "calcium_dv": 18,
-    "iron_mg": 10,
-    "iron_dv": 56,
-    "potassium_mg": 1440,
-    "potassium_dv": 31
-  },
-  "ingredients": [
-    {"name": "Rolled oats", "weight": 500},
-    {"name": "carrot", "weight": 200},
-    {"name": "pumpkin seeds (ground)", "weight": 150},
-    {"name": "potato", "weight": 180},
-    {"name": "garbanzo beans (precooked, dried)", "weight": 120},
-    {"name": "broccoli", "weight": 100},
-    {"name": "organic kale", "weight": 80},
-    {"name": "golden flax seeds (ground)", "weight": 60},
-    {"name": "turmeric", "weight": 5},
-    {"name": "black pepper", "weight": 2}
-  ]
-}
+    "recipe_name": "Low FODMAP Mush",
+    "short_name": "LF",
+    "config": {
+      "has_salt_variants": true
+    },
+    "nutrition": {
+      "servings_per_container": 48,
+      "serving_size": "1.25 cups (125g)",
+      "calories": 500,
+      "total_fat_g": 18,
+      "total_fat_dv": 23,
+      "sat_fat_g": 1,
+      "sat_fat_dv": 5,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 0,
+      "cholesterol_dv": 0,
+      "sodium_mg": 96,
+      "sodium_dv": 4,
+      "total_carb_g": 147,
+      "total_carb_dv": 53,
+      "fiber_g": 12,
+      "fiber_dv": 43,
+      "sugar_g": 13,
+      "added_sugar_g": 0,
+      "added_sugar_dv": 0,
+      "protein_g": 22,
+      "vit_d_mcg": 0,
+      "vit_d_dv": 0,
+      "calcium_mg": 230,
+      "calcium_dv": 18,
+      "iron_mg": 10,
+      "iron_dv": 56,
+      "potassium_mg": 1440,
+      "potassium_dv": 31
+    },
+    "ingredients": [
+      {"name": "Rolled oats", "weight": 500},
+      {"name": "carrot", "weight": 200},
+      {"name": "pumpkin seeds (ground)", "weight": 150},
+      {"name": "potato", "weight": 180},
+      {"name": "garbanzo beans (precooked, dried)", "weight": 120},
+      {"name": "broccoli", "weight": 100},
+      {"name": "organic kale", "weight": 80},
+      {"name": "golden flax seeds (ground)", "weight": 60},
+      {"name": "turmeric", "weight": 5},
+      {"name": "black pepper", "weight": 2}
+    ]
+  }
 ]

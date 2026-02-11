@@ -105,7 +105,9 @@ for recipe in recipes_list:
                 html_output = template.render(
                     ingredients_text=final_ingredients_text,
                     n=variant_nutrition,
-                    font_path=project_path
+                    font_path=project_path,
+                    full_name=r_name,
+                    short_name=recipe.get('short_name')
                 )
 
                 HTML(string=html_output).write_pdf(full_path)
