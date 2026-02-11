@@ -1,6 +1,7 @@
 * Set-up
 ** System Dependencies
 - `sudo apt-get install python3-pip python3-cffi python3-brotli libpango-1.0-0 libpangoft2-1.0-0`
+- `sudo apt-get install poppler-utils`
 ** New machine set-up
 - Create a fresh venv `python3 -m venv .venv`
 - Activate it

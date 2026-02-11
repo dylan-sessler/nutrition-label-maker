@@ -3,6 +3,8 @@ import os
 import copy
 from jinja2 import Environment, FileSystemLoader
 from weasyprint import HTML
+from io import BytesIO
+from pdf2image import convert_from_bytes
 
 # --- SETUP ---
 output_dir = "output_labels"
@@ -99,7 +101,7 @@ for recipe in recipes_list:
 
                 # --- C. RENDER ---
                 safe_name = r_name.replace(" ", "_").replace("(", "").replace(")", "")
-                filename = f"{safe_name}_{servings_display}sv_{salt_type}.pdf"
+                filename = f"{safe_name}_{servings_display}sv_{salt_type}.png"
                 full_path = os.path.join(output_dir, filename)
 
                 html_output = template.render(
@@ -110,7 +112,15 @@ for recipe in recipes_list:
                     short_name=recipe.get('short_name')
                 )
 
-                HTML(string=html_output).write_pdf(full_path)
+                # 1. Generate PDF to RAM (write_pdf returns bytes if no target given)
+                pdf_bytes = HTML(string=html_output).write_pdf()
+
+                # 2. Convert PDF bytes to Images (at 300 DPI)
+                images = convert_from_bytes(pdf_bytes, dpi=300)
+
+                # 3. Save the first page as PNG
+                if images:
+                    images[0].save(full_path, format='PNG')
 
     except Exception as e:
         print(f"  ERROR processing {r_name}: {e}")
