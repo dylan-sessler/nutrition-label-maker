@@ -1,6 +1,7 @@
 * DONE Ingredients box
 JSON data => png
 * DONE Nutrition Facts
-* TODO Handle Variants
+* DONE Handle Variants
+* TODO Handle multiple recipes
 * TODO Header and Footer
 * TODO sizing and final polish
