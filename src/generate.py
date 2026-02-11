@@ -7,20 +7,30 @@ from weasyprint import HTML
 # --- SETUP ---
 output_dir = "output_labels"
 os.makedirs(output_dir, exist_ok=True)
-
-# Get current path for fonts
 project_path = "file://" + os.path.abspath(os.getcwd())
 
 # --- CONFIGURATION ---
-SALT_VARIANTS = {
-    "noSalt": 0,
-    "standardSalt": 614,
-    "highSalt": 1228
-}
 SODIUM_DV_BASE = 2300
 
+# SALT PROFILES
+# "sodium_mg": Added to the Nutrition Facts (Per Serving)
+# "salt_g_per_48_servings": The actual weight of salt added to a full batch
+SALT_VARIANTS = {
+    "noSalt": {
+        "sodium_mg": 0,
+        "salt_g_per_48_servings": 0
+    },
+    "standardSalt": {
+        "sodium_mg": 614,
+        "salt_g_per_48_servings": 76
+    },
+    "highSalt": {
+        "sodium_mg": 1228,
+        "salt_g_per_48_servings": 152
+    }
+}
+
 # --- LOAD DATA ---
-# Note: We now expect a LIST of recipes, not just one object
 with open('src/data.json', 'r') as f:
     recipes_list = json.load(f)
 
@@ -34,44 +44,62 @@ for recipe in recipes_list:
     print(f"--- Processing: {r_name} ---")
 
     try:
-        # 1. PROCESS INGREDIENTS
-        raw_ingredients = recipe['ingredients']
-        # Sort by weight descending
-        sorted_ingredients = sorted(raw_ingredients, key=lambda x: x.get('weight', 0), reverse=True)
-        ingredient_names = [item['name'] for item in sorted_ingredients]
-        final_ingredients_text = ", ".join(ingredient_names)
+        # 1. GET BASE INGREDIENTS
+        base_ingredients = recipe.get('ingredients', [])
 
-        # 2. DETERMINE VARIANTS
-        # Check the boolean flag in the recipe config
+        # 2. DETERMINE SALT LEVELS
         if recipe.get('config', {}).get('has_salt_variants', False):
             active_salt_levels = ["noSalt", "standardSalt", "highSalt"]
         else:
             active_salt_levels = ["noSalt"]
 
-        # 3. GENERATE LABEL MATRIX
-        for servings in [5, 24, 48]:
+        # 3. GENERATE VARIANTS
+        for servings_display in [5, 24, 48]:
             for salt_type in active_salt_levels:
 
-                # Copy nutrition data to avoid modifying the original
+                # --- A. PREPARE NUTRITION DATA ---
                 variant_nutrition = copy.deepcopy(recipe['nutrition'])
+                variant_nutrition['servings_per_container'] = servings_display
 
-                # A. Update Servings
-                variant_nutrition['servings_per_container'] = servings
+                salt_data = SALT_VARIANTS[salt_type]
 
-                # B. Update Sodium (if salt is added)
-                # We only add sodium if it's NOT 'noSalt'
-                if salt_type != "noSalt":
-                    added_sodium = SALT_VARIANTS[salt_type]
-                    total_sodium = variant_nutrition.get('sodium_mg', 0) + added_sodium
-                    variant_nutrition['sodium_mg'] = total_sodium
+                # Update Sodium (Per Serving)
+                added_sodium = salt_data['sodium_mg']
+                current_sodium = variant_nutrition.get('sodium_mg', 0)
+                total_sodium = current_sodium + added_sodium
+                variant_nutrition['sodium_mg'] = total_sodium
 
-                    # Recalc DV%
-                    new_dv = (total_sodium / SODIUM_DV_BASE) * 100
-                    variant_nutrition['sodium_dv'] = round(new_dv)
+                # Update DV%
+                new_dv = (total_sodium / SODIUM_DV_BASE) * 100
+                variant_nutrition['sodium_dv'] = round(new_dv)
 
-                # C. Render
-                safe_name = r_name.replace(" ", "_")
-                filename = f"{safe_name}_{servings}sv_{salt_type}.pdf"
+                # --- B. PREPARE INGREDIENT LIST ---
+                current_ingredients_list = copy.deepcopy(base_ingredients)
+
+                # Use the hard-coded batch weight directly
+                total_salt_weight_g = salt_data['salt_g_per_48_servings']
+
+                # Add Salt to list if weight > 0
+                if total_salt_weight_g > 0:
+                    current_ingredients_list.append({
+                        "name": "salt",
+                        "weight": total_salt_weight_g
+                    })
+
+                # SORT by weight (Descending)
+                # Includes the fix for 'null' weights: (x.get('weight') or 0)
+                sorted_ingredients = sorted(
+                    current_ingredients_list,
+                    key=lambda x: (x.get('weight') or 0),
+                    reverse=True
+                )
+
+                # Generate string
+                final_ingredients_text = ", ".join([item['name'] for item in sorted_ingredients])
+
+                # --- C. RENDER ---
+                safe_name = r_name.replace(" ", "_").replace("(", "").replace(")", "")
+                filename = f"{safe_name}_{servings_display}sv_{salt_type}.pdf"
                 full_path = os.path.join(output_dir, filename)
 
                 html_output = template.render(
@@ -81,7 +109,6 @@ for recipe in recipes_list:
                 )
 
                 HTML(string=html_output).write_pdf(full_path)
-                print(f"  -> Created {filename}")
 
     except Exception as e:
         print(f"  ERROR processing {r_name}: {e}")

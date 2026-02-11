@@ -2,6 +2,7 @@
 JSON data => png
 * DONE Nutrition Facts
 * DONE Handle Variants
-* TODO Handle multiple recipes
+* DONE Handle multiple recipes
+* TODO Add salt to ingredient list when there's added salt
 * TODO Header and Footer
 * TODO sizing and final polish

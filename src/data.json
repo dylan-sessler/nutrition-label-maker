@@ -48,7 +48,7 @@
     ]
   },
   {
-    "recipe_name": "Cruciferous Mush (no salt)",
+    "recipe_name": "Cruciferous Mush",
     "config": {
       "has_salt_variants": true
     },
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "recipe_name": "Umami Mush (no salt)",
+    "recipe_name": "Umami Mush",
     "config": {
       "has_salt_variants": true
     },
