@@ -5,6 +5,7 @@ from jinja2 import Environment, FileSystemLoader
 from weasyprint import HTML
 from io import BytesIO
 from pdf2image import convert_from_bytes
+from PIL import ImageOps # Used for finding the content bounding box
 
 # --- SETUP ---
 output_dir = "output_labels"
@@ -118,9 +119,25 @@ for recipe in recipes_list:
                 # 2. Convert PDF bytes to Images (at 300 DPI)
                 images = convert_from_bytes(pdf_bytes, dpi=300)
 
-                # 3. Save the first page as PNG
+                # 3. Trim and Save
                 if images:
-                    images[0].save(full_path, format='PNG')
+                    img = images[0]
+
+                    # Find the bounding box of the content (non-white areas)
+                    # We invert the image (white->black) so getbbox() finds the content
+                    bbox = ImageOps.invert(img.convert('RGB')).getbbox()
+
+                    if bbox:
+                        # bbox is (left, top, right, bottom)
+                        # We crop: left=0, top=0, right=width, bottom=content_bottom + padding
+                        trim_bottom = bbox[3] + 10  # Add 10px padding
+
+                        # Ensure we don't crop beyond the image height
+                        trim_bottom = min(trim_bottom, img.height)
+
+                        img = img.crop((0, 0, img.width, trim_bottom))
+
+                    img.save(full_path, format='PNG')
 
     except Exception as e:
         print(f"  ERROR processing {r_name}: {e}")
